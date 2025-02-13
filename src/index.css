@@ -5,3 +5,7 @@
   --color-primary-orange: #f24e1e;
   --color-border-dark: #565454;
 }
+
+button {
+  cursor: pointer;
+}
