@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import Header from "../widgets/Header";
 import Sidebar from "../widgets/Sidebar";
 import { useMedia } from "react-use";
+import { Suspense } from "react";
 
 export default function PrimaryLayout() {
   const isWide = useMedia("(min-width: 768px)");
@@ -12,10 +13,12 @@ export default function PrimaryLayout() {
       </div>
       <div className="flex-1 bg-green-300 flex">
         {/* <div className="bg-purple-500 flex flex-col w-[30%] max-w-[365px]"> */}
-          <Sidebar isWide={isWide} />
+        <Sidebar isWide={isWide} />
         {/* </div> */}
         <div className="flex-1">
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </div>

@@ -1,10 +1,17 @@
 import { Outlet, RouteObject } from "react-router";
-import DashboardPage from "../pages/dashboard";
-import SettingsPage from "../pages/dashboard/settings";
-import VitalTasksPage from "../pages/dashboard/vital-tasks";
-import MyTaskPage from "../pages/dashboard/my-task";
-import TaskCategoriesPage from "../pages/dashboard/task-categories";
-import HelpPage from "../pages/dashboard/help";
+
+import { lazy } from "react";
+
+const DashboardPageComponent = lazy(() => import("../pages/dashboard"));
+const SettingsPageComponent = lazy(() => import("../pages/dashboard/settings"));
+const VitalTasksPageComponent = lazy(
+  () => import("../pages/dashboard/vital-tasks")
+);
+const MyTaskPageComponent = lazy(() => import("../pages/dashboard/my-task"));
+const TaskCategoriesPageComponent = lazy(
+  () => import("../pages/dashboard/task-categories")
+);
+const HelpPageComponent = lazy(() => import("../pages/dashboard/help"));
 
 const DashboardRoutes: RouteObject = {
   path: "/dashboard",
@@ -12,27 +19,27 @@ const DashboardRoutes: RouteObject = {
   children: [
     {
       index: true,
-      element: <DashboardPage />,
+      element: <DashboardPageComponent />,
     },
     {
       path: "settings",
-      element: <SettingsPage />,
+      element: <SettingsPageComponent />,
     },
     {
       path: "vital-task",
-      element: <VitalTasksPage />,
+      element: <VitalTasksPageComponent />,
     },
     {
       path: "my-task",
-      element: <MyTaskPage />,
+      element: <MyTaskPageComponent />,
     },
     {
       path: "task-categories",
-      element: <TaskCategoriesPage />,
+      element: <TaskCategoriesPageComponent />,
     },
     {
       path: "help",
-      element: <HelpPage />,
+      element: <HelpPageComponent />,
     },
   ],
 };
