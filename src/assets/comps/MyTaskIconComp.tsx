@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function MyTastIconComp({ color = "#fff" }: { color: string }) {
+export default function MyTaskIconComp({ color = "#fff" }: { color: string }) {
   return (
     <svg
       width="18"
@@ -11,6 +9,10 @@ export default function MyTastIconComp({ color = "#fff" }: { color: string }) {
     >
       <path
         d="M2 20H16C17.103 20 18 19.103 18 18V3C18 1.897 17.103 1 16 1H14C14 0.734784 13.8946 0.48043 13.7071 0.292893C13.5196 0.105357 13.2652 0 13 0H5C4.73478 0 4.48043 0.105357 4.29289 0.292893C4.10536 0.48043 4 0.734784 4 1H2C0.897 1 0 1.897 0 3V18C0 19.103 0.897 20 2 20ZM2 3H4V5H14V3H16V18H2V3Z"
+        fill={color}
+      />
+      <path
+        d="M7.99997 11.586L6.20697 9.79297L4.79297 11.207L7.99997 14.414L13.207 9.20697L11.793 7.79297L7.99997 11.586Z"
         fill={color}
       />
     </svg>

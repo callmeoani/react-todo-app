@@ -1,4 +1,4 @@
-import TaskImage from "../../../assets/taskImage.png";
+import TaskImage from "../../assets/images/taskImage.png";
 
 type TaskSummaryCardTypes = {
   title: string;

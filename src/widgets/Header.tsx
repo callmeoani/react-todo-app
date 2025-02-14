@@ -127,6 +127,7 @@ export default function Header({ isWide }: { isWide: boolean }) {
                       <li key={index}>
                         <Link
                           to={item.path}
+                          onClick={() => setShowHamburger(false)}
                           className="grid grid-cols-3 items-center gap-2"
                         >
                           <div className="flex items-center justify-center">

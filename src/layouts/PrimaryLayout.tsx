@@ -11,15 +11,13 @@ export default function PrimaryLayout() {
       <div className="w-full sticky top-0">
         <Header isWide={isWide} />
       </div>
-      <div className="flex-1 bg-green-300 flex">
-        {/* <div className="bg-purple-500 flex flex-col w-[30%] max-w-[365px]"> */}
+      <div className="flex-1 bg-[#F5F8FF] flex pt-[24px] md:pt-[56px] ">
         <Sidebar isWide={isWide} />
-        {/* </div> */}
-        <div className="flex-1">
-          <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div className="flex-1 flex flex-col px-[24px] lg:px-[48px] xl:px-[72px] pb-[15px] xl:pb-[30px] ">
             <Outlet />
-          </Suspense>
-        </div>
+          </div>
+        </Suspense>
       </div>
     </div>
   );
